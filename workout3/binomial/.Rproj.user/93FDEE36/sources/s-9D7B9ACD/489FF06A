@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556499663824.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "489FF06A",
+    "lastKnownWriteTime" : 1556568839,
+    "last_content_update" : 1556568839030,
+    "path" : "~/binomial/R/private_auxiliary_functions.R",
+    "project_path" : "R/private_auxiliary_functions.R",
+    "properties" : {
+        "cursorPosition" : "17,44",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

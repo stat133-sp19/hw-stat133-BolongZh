@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1556491884303.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1067021187",
+    "id" : "EF27C6B6",
+    "lastKnownWriteTime" : 1556497509,
+    "last_content_update" : 1556497509169,
+    "path" : "~/binomial/R/private_checker_functions.R",
+    "project_path" : "R/private_checker_functions.R",
+    "properties" : {
+        "cursorPosition" : "3,29",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
