@@ -7,7 +7,7 @@ Overview
 
 -   `bin_choose`, `bin_probability` calculates the number of combinations and binomial probability given the number of trials and successes
 -   `bin_distribution` and `bin_cumulative` presents non-cumulative and cumulative probability distribution of a given binomial variable.
--   `bin_variable()` creates a binomial variable, which you also contains statistical information about a binomial variable.
+-   `bin_variable()` creates a binomial variable, which also contains statistical information about a binomial variable.
 -   `bin_mean`, `bin_variance`, `bin_mode`, `bin_skewness` and `bin_kurtosis` computes basic statistical measures for a given binomial variable.
 -   `plot()` method for a binomial distribution.
 -   `summary()` method for a binomail variable.
