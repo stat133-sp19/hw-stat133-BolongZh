@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Bolong Zheng" />
+
+
+<title>introduction</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' || rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">introduction</h1>
+<h4 class="author"><em>Bolong Zheng</em></h4>
+
+
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(binomial)
+<span class="co">#&gt; Loading required package: ggplot2</span></code></pre></div>
+<div id="binomial-package" class="section level1">
+<h1>Binomial Package</h1>
+<p>The package implements functions for calculating probabilities of a Binomial random variable, and related calculations such as the probability distribution, the expected value, variance, etc.</p>
+</div>
+<div id="combination" class="section level1">
+<h1>combination</h1>
+<p>‘bin_choose()’ calculates the number of combinations in which k successes can occur in n trials.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bin_choose</span>(<span class="dt">n =</span> <span class="dv">5</span>, <span class="dt">k =</span> <span class="dv">2</span>)
+<span class="co">#&gt; [1] 10</span>
+<span class="kw">bin_choose</span>(<span class="dv">5</span>, <span class="dv">0</span>)
+<span class="co">#&gt; [1] 1</span>
+<span class="kw">bin_choose</span>(<span class="dv">5</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)
+<span class="co">#&gt; [1]  5 10 10</span></code></pre></div>
+</div>
+<div id="binomial-probability" class="section level1">
+<h1>binomial probability</h1>
+<p>‘bin_probability()’ calculates the binomial probability in which k successes can occur in n trials where the probability for an individual trial to succeed is p.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># 55 heads in 100 tosses of a loaded coin with 45% chance of heads</span>
+<span class="kw">bin_probability</span>(<span class="dt">success =</span> <span class="dv">55</span>, <span class="dt">trials =</span> <span class="dv">100</span>, <span class="dt">prob =</span> <span class="fl">0.45</span>)
+<span class="co">#&gt; [1] 0.01075277</span>
+<span class="co"># probability of getting 2 successes in 5 trials</span>
+<span class="co"># (assuming prob of success = 0.5)</span>
+<span class="kw">bin_probability</span>(<span class="dt">success =</span> <span class="dv">2</span>, <span class="dt">trials =</span> <span class="dv">5</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)
+<span class="co">#&gt; [1] 0.3125</span>
+<span class="co"># probabilities of getting 2 or less successes in 5 trials</span>
+<span class="co"># (assuming prob of success = 0.5)</span>
+<span class="kw">bin_probability</span>(<span class="dt">success =</span> <span class="dv">0</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">trials =</span> <span class="dv">5</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)
+<span class="co">#&gt; [1] 0.03125 0.15625 0.31250</span></code></pre></div>
+</div>
+<div id="binomial-distribution" class="section level1">
+<h1>binomial distribution</h1>
+<p>‘bin_distribution()’ creates a data frame for the binomial distribution.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># binomial probability distribution</span>
+<span class="kw">bin_distribution</span>(<span class="dt">trials =</span> <span class="dv">5</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)
+<span class="co">#&gt;   success probability</span>
+<span class="co">#&gt; 1       0     0.03125</span>
+<span class="co">#&gt; 2       1     0.15625</span>
+<span class="co">#&gt; 3       2     0.31250</span>
+<span class="co">#&gt; 4       3     0.31250</span>
+<span class="co">#&gt; 5       4     0.15625</span>
+<span class="co">#&gt; 6       5     0.03125</span></code></pre></div>
+<p>The plot function will present a nice visualization of a given binomial distribution</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plotting binomial probability distribution</span>
+dis1 &lt;-<span class="st"> </span><span class="kw">bin_distribution</span>(<span class="dt">trials =</span> <span class="dv">5</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)
+<span class="kw">plot</span>(dis1)
+<span class="co">#&gt; Warning: Ignoring unknown parameters: binwidth, bins, pad</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="binomial-cumulative-distribution" class="section level1">
+<h1>binomial cumulative distribution</h1>
+<p>Just like ‘bin_distribution()’, ‘bin_cumulative()’ creates a data frame and allows you to plot and visualize distribution. But the distribution and probability here is cumulative.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># plotting binomial cumulative distribution</span>
+dis2 &lt;-<span class="st"> </span><span class="kw">bin_cumulative</span>(<span class="dt">trials =</span> <span class="dv">5</span>, <span class="dt">prob =</span> <span class="fl">0.5</span>)
+<span class="kw">plot</span>(dis2)</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="binomial-variable" class="section level1">
+<h1>binomial variable</h1>
+<p>‘bin_variable()’ creates a binomial variable, which you can apply ‘print’, ‘summary’ to obtain statistical information about a binomial variable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bin1 &lt;-<span class="st"> </span><span class="kw">bin_variable</span>(<span class="dt">trials =</span> <span class="dv">10</span>, <span class="dt">p =</span> <span class="fl">0.3</span>)
+bin1
+<span class="co">#&gt; &quot;Binomial variable&quot;</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Parameters</span>
+<span class="co">#&gt; - number of trials:  10 </span>
+<span class="co">#&gt; - prob of success:  0.3</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bin1 &lt;-<span class="st"> </span><span class="kw">bin_variable</span>(<span class="dt">trials =</span> <span class="dv">10</span>, <span class="dt">p =</span> <span class="fl">0.3</span>)
+binsum1 &lt;-<span class="st"> </span><span class="kw">summary</span>(bin1)
+binsum1
+<span class="co">#&gt; &quot;Summary Binomial&quot;</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Parameters</span>
+<span class="co">#&gt; - number of trials:  10 </span>
+<span class="co">#&gt; - prob of success:  0.3 </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Measures</span>
+<span class="co">#&gt; - mean    :  3 </span>
+<span class="co">#&gt; - variance:  2.1 </span>
+<span class="co">#&gt; - mode    :  3 </span>
+<span class="co">#&gt; - skewness:  0.2760262 </span>
+<span class="co">#&gt; - kurtosis:  -0.1238095</span></code></pre></div>
+</div>
+<div id="functions-of-measures" class="section level1">
+<h1>functions of measures</h1>
+<p>Of course, this package also contains some basic and handy functions for statistical measures such as ‘bin_mean()’, ‘bin_variance()’,‘bin_mode()’,‘bin_skewness()’,‘bin_kurtosis()’</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bin_mean</span>(<span class="dv">10</span>, <span class="fl">0.3</span>)
+<span class="co">#&gt; [1] 3</span>
+<span class="kw">bin_variance</span>(<span class="dv">10</span>, <span class="fl">0.3</span>)
+<span class="co">#&gt; [1] 2.1</span>
+<span class="kw">bin_mode</span>(<span class="dv">10</span>, <span class="fl">0.3</span>)
+<span class="co">#&gt; [1] 3</span>
+<span class="kw">bin_skewness</span>(<span class="dv">10</span>, <span class="fl">0.3</span>)
+<span class="co">#&gt; [1] 0.2760262</span>
+<span class="kw">bin_kurtosis</span>(<span class="dv">10</span>, <span class="fl">0.3</span>)
+<span class="co">#&gt; [1] -0.1238095</span></code></pre></div>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

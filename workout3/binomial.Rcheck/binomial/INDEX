@@ -1,0 +1,11 @@
+bin_choose              number of combinations
+bin_cumulative          Binomial Cumulative Function
+bin_distribution        Binomial Distribution Function
+bin_kurtosis            Binomial Kurtosis Function
+bin_mean                Binomial Mean Function
+bin_mode                Binomial Mode Function
+bin_probability         probability of getting a given number of
+                        successes in a given number of trials
+bin_skewness            Binomial Skewness Function
+bin_variable            Binomial Random Variable Function
+bin_variance            Binomial Variance Function

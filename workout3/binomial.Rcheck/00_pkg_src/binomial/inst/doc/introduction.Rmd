@@ -1,0 +1,88 @@
+---
+title: "introduction"
+author: "Bolong Zheng"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(binomial)
+```
+
+#Binomial Package
+The package implements functions for calculating probabilities of a Binomial random variable, and related calculations such as the probability distribution, the expected value, variance, etc.
+
+#combination
+'bin_choose()' calculates the number of combinations in which k successes can occur in n trials.
+```{r}
+bin_choose(n = 5, k = 2)
+bin_choose(5, 0)
+bin_choose(5, 1:3)
+```
+
+#binomial probability
+'bin_probability()' calculates the binomial probability in which k successes can occur in n trials where the probability for an individual trial to succeed is p.
+```{r}
+# 55 heads in 100 tosses of a loaded coin with 45% chance of heads
+bin_probability(success = 55, trials = 100, prob = 0.45)
+# probability of getting 2 successes in 5 trials
+# (assuming prob of success = 0.5)
+bin_probability(success = 2, trials = 5, prob = 0.5)
+# probabilities of getting 2 or less successes in 5 trials
+# (assuming prob of success = 0.5)
+bin_probability(success = 0:2, trials = 5, prob = 0.5)
+```
+
+#binomial distribution
+'bin_distribution()' creates a data frame for the binomial distribution.
+```{r}
+# binomial probability distribution
+bin_distribution(trials = 5, prob = 0.5)
+```
+The plot function will present a nice visualization of a given binomial distribution
+```{r, fig.show='hold'}
+# plotting binomial probability distribution
+dis1 <- bin_distribution(trials = 5, prob = 0.5)
+plot(dis1)
+```
+
+#binomial cumulative distribution
+Just like 'bin_distribution()', 'bin_cumulative()' creates a data frame and allows you to plot and visualize distribution. But the distribution and probability here is cumulative.
+```{r}
+# plotting binomial cumulative distribution
+dis2 <- bin_cumulative(trials = 5, prob = 0.5)
+plot(dis2)
+```
+
+#binomial variable
+'bin_variable()' creates a binomial variable, which you can apply 'print', 'summary' to obtain statistical information about a binomial variable.
+```{r}
+bin1 <- bin_variable(trials = 10, p = 0.3)
+bin1
+```
+
+```{r}
+bin1 <- bin_variable(trials = 10, p = 0.3)
+binsum1 <- summary(bin1)
+binsum1
+```
+
+#functions of measures
+Of course, this package also contains some basic and handy functions for statistical measures such as 'bin_mean()', 'bin_variance()','bin_mode()','bin_skewness()','bin_kurtosis()'
+```{r}
+bin_mean(10, 0.3)
+bin_variance(10, 0.3)
+bin_mode(10, 0.3)
+bin_skewness(10, 0.3)
+bin_kurtosis(10, 0.3)
+```
